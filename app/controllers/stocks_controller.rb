@@ -9,14 +9,16 @@ class StocksController < ApplicationController
           format.js { render partial: 'stocks/result' }
         end
       else
-        flash[:alert] = "#{params[:stock]} is not a valid symbol. Please enter a valid symbol to search"
-        redirect_to my_portfolio_path
+        respond_to do |format| 
+          flash.now[:alert] = "#{params[:stock]} is not a valid symbol. Please enter a valid symbol to search"
+          format.js { render partial: 'stocks/result' }
+        end 
       end
     else
-      flash[:alert] = "Please enter a symbol to search"
-      redirect_to my_portfolio_path
+      respond_to do |format| 
+          flash.now[:alert] = "Please enter a symbol to search"
+          format.js { render partial: 'stocks/result' }
+        end     
     end
   end
-
-
 end
