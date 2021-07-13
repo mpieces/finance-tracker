@@ -15,4 +15,10 @@ class Stock < ApplicationRecord
       nil
     end
   end
+#  first, see if ticker symbol already exists in db table
+# Stock. is implied before the 'where'
+  def self.check_db(ticker_symbol)
+    where(ticker: ticker_symbol).first
+  end
+
 end
