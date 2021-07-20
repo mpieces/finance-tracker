@@ -15,6 +15,11 @@
                 <%= link_to 'My Portfolio', my_portfolio_path, class: 'nav-link' %>
 
               </li>
+              <li class="nav-item">
+                <%= link_to edit_user_registration_path, class: 'nav-link' do  %>
+                  <%= fa_icon 'edit' %> Edit profile
+                <% end %>
+              </li>
              
             </ul>
 
