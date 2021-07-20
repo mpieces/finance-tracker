@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get "/index", to: "welcome#index"
   get "search_stock", to: "stocks#search"
   get "/my_friends", to: "users#show_friends"
-end
+  get "search_friend", to: "users#search"
+ end
