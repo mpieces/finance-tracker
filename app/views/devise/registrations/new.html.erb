@@ -1,6 +1,8 @@
 <h1><%= t('.sign_up') %></h1>
+
   <div class="row">
     <div class="col-9">
+
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= bootstrap_devise_error_messages! %>
 
@@ -8,6 +10,17 @@
           <%= f.label :email %>
           <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
         </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              <%= f.label :first_name %>
+              <%= f.text_field :first_name, autofocus: true, autocomplete: 'first name', class: 'form-control' %>
+            </div>
+            <div class="form-group col-md-6">
+              <%= f.label :last_name %>
+              <%= f.text_field :last_name, autofocus: true, autocomplete: 'last name', class: 'form-control' %>
+            </div>
+          </div>
 
         <div class="form-group">
           <%= f.label :password %>
@@ -29,5 +42,6 @@
       <% end %>
 
       <%= render 'devise/shared/links' %>
+      
     </div>
   </div>
