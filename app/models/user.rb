@@ -56,6 +56,10 @@ class User < ApplicationRecord
     where("#{field_name} like ?", "%#{param}%")
   end
 
+  # to ensure that current user is not included in search results
+  def except_current_user(users)
+    users.reject { |user| user.id == self.id }
+  end
 
 
 end
